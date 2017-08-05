@@ -46,33 +46,3 @@ INSERT INTO employee (id, first_name, last_name, id_department) VALUES (20051885
 INSERT INTO employee (id, first_name, last_name, id_department) VALUES (19968993, 'Isamar', 'Martínez', 1);
 INSERT INTO employee (id, first_name, last_name, id_department) VALUES (13229331, 'Luis', 'Mejía', 2);
 INSERT INTO employee (id, first_name, last_name, id_department) VALUES (12244432, 'Alice', 'Vargas', 3);
-
--- Create table from employees hobby.
-CREATE TABLE employee_hobby
-(
-    id SERIAL PRIMARY KEY NOT NULL,
-    name VARCHAR(45) NOT NULL,
-    description TEXT
-);
-
--- Insert data from employees hobby.
-INSERT INTO employee_hobby (name, description) VALUES ('Basketball', 'Sport in free days');
-INSERT INTO employee_hobby (name, description) VALUES ('Make to music', 'Make to music in free time');
-INSERT INTO employee_hobby (name, description) VALUES ('Photography', 'Photography in free days');
-
--- Create pivot table from employees and their hobbies. Many to Many.
-CREATE TABLE employees_hobbies
-(
-    id_employee INTEGER REFERENCES employee (id),
-    id_employee_hobby INTEGER REFERENCES employee_hobby (id)
-);
-
--- Insert data from employees and their hobbies.
-INSERT INTO employees_hobbies (id_employee, id_employee_hobby) VALUES (20051885, 1);
-INSERT INTO employees_hobbies (id_employee, id_employee_hobby) VALUES (20051885, 2);
-INSERT INTO employees_hobbies (id_employee, id_employee_hobby) VALUES (19968993, 3);
-INSERT INTO employees_hobbies (id_employee, id_employee_hobby) VALUES (19968993, 1);
-INSERT INTO employees_hobbies (id_employee, id_employee_hobby) VALUES (13229331, 3);
-INSERT INTO employees_hobbies (id_employee, id_employee_hobby) VALUES (13229331, 1);
-INSERT INTO employees_hobbies (id_employee, id_employee_hobby) VALUES (12244432, 2);
-INSERT INTO employees_hobbies (id_employee, id_employee_hobby) VALUES (12244432, 1);
