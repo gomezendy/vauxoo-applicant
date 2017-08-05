@@ -70,3 +70,19 @@ INSERT INTO employees_hobbies (id_employee, id_employee_hobby) VALUES (13229331,
 INSERT INTO employees_hobbies (id_employee, id_employee_hobby) VALUES (13229331, 1);
 INSERT INTO employees_hobbies (id_employee, id_employee_hobby) VALUES (12244432, 2);
 INSERT INTO employees_hobbies (id_employee, id_employee_hobby) VALUES (12244432, 1);
+
+-- Alter table from employees, add column boss.
+ALTER TABLE employee ADD COLUMN id_boss INTEGER;
+
+-- Alter table from employees, add constraint foreign key.
+ALTER TABLE employee ADD CONSTRAINT employee_boss_id_fk
+    FOREIGN KEY (id_boss)
+    REFERENCES employee (id);
+
+-- Update table from employees, add id boss from employee.
+UPDATE employee
+    SET id_boss = 19968993
+    WHERE id = 20051885;
+UPDATE employee
+    SET id_boss = 20051885
+    WHERE id IN(13229331, 12244432);
