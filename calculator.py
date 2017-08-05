@@ -1,16 +1,22 @@
 """
-Your module documentation here
+Sum module for Vauxoo Challenge technical test.
 """
 
 
 class CalculatorClass(object):
     """
-    Your class documentation here
+    Class that has the implementation
+    needed to sum numbers of a list.
     """
 
     def sum(self, num_list):
         """
-        Your method documentation here
+        Method to sum numbers of a list.
         """
-        # your sum code here
-        return "not implement yet"  # Remove this dummy line
+        total = 0  # It will contain the sum total of numbers.
+        try:
+            for i in num_list:
+                total += i
+            return total
+        except StandardError:
+            return total
