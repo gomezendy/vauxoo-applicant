@@ -15,8 +15,8 @@ class CalculatorClass(object):
         """
         total = 0  # It will contain the sum total of numbers.
         try:
-            for i in num_list:
-                total += i
+            for index_list in num_list:
+                total += index_list
             return total
-        except StandardError:
+        except (StandardError, TypeError):
             return total
