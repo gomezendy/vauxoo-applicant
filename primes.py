@@ -17,9 +17,9 @@ class PrimeClass(object):
         try:
             if num_int < 2:
                 return False
-            for i in range(2, num_int):
-                if(num_int % i) == 0:
+            for index_int in range(2, num_int):
+                if(num_int % index_int) == 0:
                     return False
-        except:
+        except (StandardError, TypeError):
             return False
         return True
