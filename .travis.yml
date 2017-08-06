@@ -28,3 +28,5 @@ script:
   - cat /tmp/employee_department.out
   - psql -d employee_employee -c "SELECT * FROM employee_hobby" --output=/tmp/employee_hobby.out
   - cat /tmp/employee_hobby.out
+
+dist: precise
